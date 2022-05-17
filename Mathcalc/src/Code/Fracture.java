@@ -4,6 +4,7 @@ public class Fracture {
     
     int zDenominator;
     int zNumerator;
+    int zGCD;
 
     public Fracture(int pDenominator, int pNumerator) {
         zNumerator = pNumerator;
@@ -47,12 +48,16 @@ public class Fracture {
             if (zNumerator / lhelp * lhelp == zNumerator && zDenominator / lhelp * lhelp == zDenominator) {
                 zNumerator = zNumerator / lhelp;
                 zDenominator = zDenominator / lhelp;
+                zGCD = lhelp;
                 lrun = false;
                 System.out.println("GCD: " + lhelp);
             } else {
                 lhelp = lhelp - 1;
             }
         }
+    }
+    public int getzGCD() {
+        return zGCD;
     }
     public void reciprocal() {
         int lhelp = zDenominator;
