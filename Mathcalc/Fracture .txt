@@ -1,0 +1,5 @@
+Fracture calculator
+Classes;
+fracture (Kehrwert / reciprocal); (erweitern / expand); (kürzen / shorten)
+calculator (expanding into the same nominator, addition, subtraction, multiplication, division)
+GUI
