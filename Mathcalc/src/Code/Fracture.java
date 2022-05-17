@@ -39,8 +39,20 @@ public class Fracture {
         System.out.println(zNumerator / pMultiplicator + "/" + zDenominator / pMultiplicator + " expand to " + zNumerator + "/" + zDenominator);
     }
     public void shortenCompleteley() {
-
-        
+        int lhelp;
+        boolean lrun;
+        lrun = true;
+        lhelp = Math.min(zNumerator, zDenominator);
+        while (lrun) {
+            if (zNumerator / lhelp * lhelp == zNumerator && zDenominator / lhelp * lhelp == zDenominator) {
+                zNumerator = zNumerator / lhelp;
+                zDenominator = zDenominator / lhelp;
+                lrun = false;
+                System.out.println("GCD: " + lhelp);
+            } else {
+                lhelp = lhelp - 1;
+            }
+        }
     }
     public void reciprocal() {
         int lhelp = zDenominator;
