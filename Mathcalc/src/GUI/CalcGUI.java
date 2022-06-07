@@ -4,8 +4,6 @@ import Code.Fracture;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class CalcGUI {
     public JPanel panelMain;
@@ -30,72 +28,51 @@ public class CalcGUI {
     private JTextField numerator3TextField;
     private JTextField denominator3TextField;
     private JButton calcFractureTextField;
-    private JTextField greadestDividerTextField;
+    private JTextField greatestDividerTextField;
 
     Fracture fracture1 = new Fracture(1, 1);
 
     public CalcGUI() {
-        setInputNumeratorButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fracture1.setNumerator(Integer.parseInt(setInputNumeratorTextField.getText()));
-                OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
-                OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
-                OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
-            }
+        setInputNumeratorButton.addActionListener(e -> {
+            fracture1.setNumerator(Integer.parseInt(setInputNumeratorTextField.getText()));
+            OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
+            OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
+            OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
         });
-        setInputDenominatorButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fracture1.setDenominator(Integer.parseInt(setInputDenominatorTextField.getText()));
-                OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
-                OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
-                OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
-            }
+        setInputDenominatorButton.addActionListener(e -> {
+            fracture1.setDenominator(Integer.parseInt(setInputDenominatorTextField.getText()));
+            OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
+            OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
+            OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
         });
-        setExpandButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fracture1.expand(Integer.parseInt(setExpandValueTextField.getText()));
-                OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
-                OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
-                OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
-            }
+        setExpandButton.addActionListener(e -> {
+            fracture1.expand(Integer.parseInt(setExpandValueTextField.getText()));
+            OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
+            OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
+            OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
         });
-        setShortenButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fracture1.shorten(Integer.parseInt(setShortenValueTextField.getText()));
-                OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
-                OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
-                OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
-            }
+        setShortenButton.addActionListener(e -> {
+            fracture1.shorten(Integer.parseInt(setShortenValueTextField.getText()));
+            OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
+            OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
+            OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
         });
 
-        setCalcFractureReciprocalButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fracture1.reciprocal();
-                OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
-                OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
-                OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
-            }
+        setCalcFractureReciprocalButton.addActionListener(e -> {
+            fracture1.reciprocal();
+            OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
+            OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
+            OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
         });
-        setShortCompletleyButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fracture1.shortenCompleteley();
-                OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
-                OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
-                OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
-                greadestDividerTextField.setText(String.valueOf(fracture1.getzGCD()));
-            }
+        setShortCompletleyButton.addActionListener(e -> {
+            greatestDividerTextField.setText(String.valueOf(fracture1.getGCD()));
+            fracture1.shortenCompleteley();
+            OutputNumeratorTextField.setText(String.valueOf(fracture1.getNumerator()));
+            OutputDenominatorTextField.setText(String.valueOf(fracture1.getDenominator()));
+            OutputDecimalNumberTextField.setText(String.valueOf(fracture1.getDecimal()));
         });
-        calcFractureTextField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        calcFractureTextField.addActionListener(e -> {
 
-            }
         });
     }
 
@@ -346,13 +323,13 @@ public class CalcGUI {
         gbc.gridy = 7;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(setShortCompletleyButton, gbc);
-        greadestDividerTextField = new JTextField();
+        greatestDividerTextField = new JTextField();
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
         gbc.gridy = 7;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panelMain.add(greadestDividerTextField, gbc);
+        panelMain.add(greatestDividerTextField, gbc);
     }
 
     /**
