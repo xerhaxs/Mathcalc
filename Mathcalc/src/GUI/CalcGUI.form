@@ -177,7 +177,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </vspacer>
-      <component id="b950c" class="javax.swing.JTextField" binding="numerator1TextField">
+      <component id="b950c" class="javax.swing.JTextField" binding="numerator2JTextField">
         <constraints>
           <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -186,7 +186,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="990f6" class="javax.swing.JTextField" binding="denominator1TextField">
+      <component id="990f6" class="javax.swing.JTextField" binding="denominator2JTextField">
         <constraints>
           <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -195,7 +195,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="40087" class="javax.swing.JTextField" binding="numerator2TextField">
+      <component id="40087" class="javax.swing.JTextField" binding="numerator3JTextField">
         <constraints>
           <grid row="0" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -204,7 +204,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="7ade6" class="javax.swing.JTextField" binding="denominator2TextField">
+      <component id="7ade6" class="javax.swing.JTextField" binding="denominator3JTextField">
         <constraints>
           <grid row="2" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -234,14 +234,16 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </vspacer>
-      <component id="b8f7b" class="javax.swing.JTextField" binding="numerator3TextField">
+      <component id="b8f7b" class="javax.swing.JTextField" binding="numerator4JTextField">
         <constraints>
           <grid row="0" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
       <component id="b1447" class="javax.swing.JTextField" binding="denominator3TextField">
         <constraints>
@@ -250,9 +252,11 @@
           </grid>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
-      <component id="1f2b2" class="javax.swing.JButton" binding="calcFractureTextField">
+      <component id="1f2b2" class="javax.swing.JButton" binding="calcFractureJButton">
         <constraints>
           <grid row="1" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
