@@ -2,8 +2,8 @@ package Code;
 
 public class Calc {
 
-    private Fracture connectedFracture1;
-    private Fracture connectedFracture2;
+    public Fracture connectedFracture1;
+    public Fracture connectedFracture2;
 
     public Calc() {
 

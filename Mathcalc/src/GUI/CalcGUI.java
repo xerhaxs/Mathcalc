@@ -1,11 +1,13 @@
 package GUI;
 
 import Code.Fracture;
+import Code.Calc;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class CalcGUI {
     public JPanel panelMain;
@@ -26,13 +28,15 @@ public class CalcGUI {
     private JTextField denominator2JTextField;
     private JTextField numerator3JTextField;
     private JTextField denominator3JTextField;
-    private JTextField operationTextField;
+    private JTextField operationJTextField;
     private JTextField numerator4JTextField;
     private JTextField denominator3TextField;
     private JButton calcFractureJButton;
     private JTextField greatestDividerTextField;
 
     Fracture fracture1 = new Fracture(1, 1);
+    Fracture fracture2 = new Fracture(1, 1);
+    Fracture fracture3 = new Fracture(1, 1);
 
     public CalcGUI() {
         setInputNumeratorButton.addActionListener(e -> {
@@ -77,7 +81,16 @@ public class CalcGUI {
         calcFractureJButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (Objects.equals(operationJTextField.getText(), "+")) {
+                    System.out.println("Calc: +");
 
+                } else if (Objects.equals(operationJTextField.getText(), "-")) {
+                    System.out.println("Calc: -");
+                } else if (Objects.equals(operationJTextField.getText(), "*")) {
+                    System.out.println("Calc: *");
+                } else if (Objects.equals(operationJTextField.getText(), "/")) {
+                    System.out.println("Calc: /");
+                }
             }
         });
     }
@@ -155,7 +168,7 @@ public class CalcGUI {
         OutputDenominatorTextField = new JTextField();
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
-        gbc.gridy = 12;
+        gbc.gridy = 11;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(OutputDenominatorTextField, gbc);
@@ -174,15 +187,9 @@ public class CalcGUI {
         final JPanel spacer4 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
-        gbc.gridy = 11;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        panelMain.add(spacer4, gbc);
-        final JPanel spacer5 = new JPanel();
-        gbc = new GridBagConstraints();
-        gbc.gridx = 3;
         gbc.gridy = 9;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panelMain.add(spacer5, gbc);
+        panelMain.add(spacer4, gbc);
         setExpandValueTextField = new JTextField();
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
@@ -190,18 +197,18 @@ public class CalcGUI {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(setExpandValueTextField, gbc);
-        final JPanel spacer6 = new JPanel();
+        final JPanel spacer5 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
         gbc.gridy = 4;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panelMain.add(spacer6, gbc);
-        final JPanel spacer7 = new JPanel();
+        panelMain.add(spacer5, gbc);
+        final JPanel spacer6 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
         gbc.gridy = 8;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panelMain.add(spacer7, gbc);
+        panelMain.add(spacer6, gbc);
         setExpandButton = new JButton();
         setExpandButton.setText("Set Expand");
         gbc = new GridBagConstraints();
@@ -230,35 +237,19 @@ public class CalcGUI {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(OutputDecimalNumberTextField, gbc);
-        final JPanel spacer8 = new JPanel();
-        gbc = new GridBagConstraints();
-        gbc.gridx = 5;
-        gbc.gridy = 7;
-        gbc.fill = GridBagConstraints.VERTICAL;
-        panelMain.add(spacer8, gbc);
-        final JPanel spacer9 = new JPanel();
-        gbc = new GridBagConstraints();
-        gbc.gridx = 6;
-        gbc.gridy = 7;
-        gbc.fill = GridBagConstraints.VERTICAL;
-        panelMain.add(spacer9, gbc);
-        final JPanel spacer10 = new JPanel();
-        gbc = new GridBagConstraints();
-        gbc.gridx = 7;
-        gbc.gridy = 7;
-        gbc.fill = GridBagConstraints.VERTICAL;
-        panelMain.add(spacer10, gbc);
         numerator2JTextField = new JTextField();
         gbc = new GridBagConstraints();
-        gbc.gridx = 8;
+        gbc.gridx = 6;
         gbc.gridy = 0;
+        gbc.weightx = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(numerator2JTextField, gbc);
         denominator2JTextField = new JTextField();
         gbc = new GridBagConstraints();
-        gbc.gridx = 8;
+        gbc.gridx = 6;
         gbc.gridy = 2;
+        gbc.weightx = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(denominator2JTextField, gbc);
@@ -266,45 +257,51 @@ public class CalcGUI {
         gbc = new GridBagConstraints();
         gbc.gridx = 10;
         gbc.gridy = 0;
+        gbc.weightx = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(numerator3JTextField, gbc);
         denominator3JTextField = new JTextField();
+        denominator3JTextField.setText("");
         gbc = new GridBagConstraints();
         gbc.gridx = 10;
         gbc.gridy = 2;
+        gbc.weightx = 1.0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(denominator3JTextField, gbc);
-        operationTextField = new JTextField();
+        operationJTextField = new JTextField();
         gbc = new GridBagConstraints();
-        gbc.gridx = 9;
+        gbc.gridx = 8;
         gbc.gridy = 1;
+        gbc.weightx = 0.5;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panelMain.add(operationTextField, gbc);
-        final JPanel spacer11 = new JPanel();
+        panelMain.add(operationJTextField, gbc);
+        final JPanel spacer7 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 3;
         gbc.gridy = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panelMain.add(spacer11, gbc);
-        final JPanel spacer12 = new JPanel();
+        panelMain.add(spacer7, gbc);
+        final JPanel spacer8 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 11;
         gbc.gridy = 1;
         gbc.fill = GridBagConstraints.VERTICAL;
-        panelMain.add(spacer12, gbc);
+        panelMain.add(spacer8, gbc);
         numerator4JTextField = new JTextField();
+        numerator4JTextField.setEditable(false);
         gbc = new GridBagConstraints();
-        gbc.gridx = 12;
+        gbc.gridx = 13;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(numerator4JTextField, gbc);
         denominator3TextField = new JTextField();
+        denominator3TextField.setEditable(false);
         gbc = new GridBagConstraints();
-        gbc.gridx = 12;
+        gbc.gridx = 13;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -312,16 +309,16 @@ public class CalcGUI {
         calcFractureJButton = new JButton();
         calcFractureJButton.setText("Calc Fracture");
         gbc = new GridBagConstraints();
-        gbc.gridx = 12;
+        gbc.gridx = 13;
         gbc.gridy = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(calcFractureJButton, gbc);
-        final JPanel spacer13 = new JPanel();
+        final JPanel spacer9 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 4;
         gbc.gridy = 7;
         gbc.fill = GridBagConstraints.VERTICAL;
-        panelMain.add(spacer13, gbc);
+        panelMain.add(spacer9, gbc);
         setShortCompletleyButton = new JButton();
         setShortCompletleyButton.setText("Short Completley");
         gbc = new GridBagConstraints();
@@ -336,6 +333,36 @@ public class CalcGUI {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panelMain.add(greatestDividerTextField, gbc);
+        final JPanel spacer10 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 9;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        panelMain.add(spacer10, gbc);
+        final JPanel spacer11 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 7;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        panelMain.add(spacer11, gbc);
+        final JPanel spacer12 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 12;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        panelMain.add(spacer12, gbc);
+        final JPanel spacer13 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 3;
+        gbc.gridy = 12;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        panelMain.add(spacer13, gbc);
+        final JPanel spacer14 = new JPanel();
+        gbc = new GridBagConstraints();
+        gbc.gridx = 5;
+        gbc.gridy = 7;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        panelMain.add(spacer14, gbc);
     }
 
     /**
