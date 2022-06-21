@@ -1,20 +1,20 @@
 package Code;
 
 public class Calc {
+    
+     private Fracture connectedFracture1;
+     private Fracture connectedFracture2;
 
-    public Fracture connectedFracture1;
-    public Fracture connectedFracture2;
+     public Calc() {
 
-    public Calc() {
+     }
+     public void connectFracture1(Fracture pFracture) {
+         connectedFracture1 = pFracture;
 
-    }
-    public void connectFracture1(Fracture pFracture) {
-        connectedFracture1 = pFracture;
-
-    }
-    public void connectFracture2(Fracture pFracture) {
-        connectedFracture2 = pFracture;
-    }
+     }
+     public void connectFracture2(Fracture pFracture) {
+         connectedFracture2 = pFracture;
+     }
     private int getSCM() {
         int lHelp = 1;
         while (!(lHelp % connectedFracture1.getDenominator() == 0 && lHelp % connectedFracture2.getDenominator() == 0)) {
